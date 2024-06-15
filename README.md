@@ -28,5 +28,80 @@ In a typical web scraping task with Python, the workflow involves:
 
 # :key: Python code
 
+
+      #  Import the necessary libraries
+      from bs4 import BeautifulSoup  # importing BeautifulSoup and BeautifulSoup4
+      import requests                # importing requests
+      import pandas as pd            # importing pandas
+
+
+      # Define the URL to be scraped
+      url = "https://www.worldometers.info/world-population/population-by-country/"
+
+
+      # Send a GET request to the URL and get the response
+      response = requests.get(url)
+      response                 # your request was successful 
+                         # the server responded with the data that you were requesting
+
+
+       # Extracting data in HTML response content with BeautifulSoup
+      soup = BeautifulSoup(response.text, 'html')  # getting data with html as text
+      soup                  
+      
+      # to display data in a systematic manner(HTML scipt form)
+      print(soup.prettify())
+
+      
+      # Extract the table with information
+      table=soup.find_all('table')[0]
+      table.prettify()
+
+      # Extracting the title of the columns with 'th' tags for table heading
+      titles=table.find_all('th')
+      titles
+
+      
+      # Making a list of columns name using list comprehension
+      Population_table_titles = [title.text.strip() for title in titles]
+      Population_table_titles
+
+
+      # Displaying the column name and changing the first column name 
+      Population_table_titles[0]="Index"
+      Population_table_titles
+
+
+      # Putting column names into dataframe
+      import pandas as pd
+      df=pd.DataFrame(columns=Population_table_titles)
+      df
+
+
+      # Extracting a data for table from internet(URL) with 'tr' tags all rows data including the heading
+      data=table.find_all('tr')
+      data
+
+
+      # Extracting the cleaned data from for loop with 'td' tags with raw data excluding the heading
+      for row in data[1:]:
+        row_data=row.find_all('td')
+        row_data_1=[td.text.strip() for td in row_data]
+
+
+        # Add the row data to the DataFrame by checking the length of the dataframe
+        length=len(df)
+        df.loc[length]=row_data_1
+
+
+       # final table before extraction
+       df
+
+
       df.to_excel('output.xlsx',index=False)   # storing the data in excel file
 
+
+:paperclip:  Web scraping is a powerful technique for data collection, enabling access to a vast amount of information available on the internet. With Python's requests and BeautifulSoup libraries, you can efficiently scrape and parse web data to suit various needs, from academic research to business intelligence.
+
+
+:paperclip:  While web scraping offers immense potential, it is crucial to use it responsibly and ethically. 
