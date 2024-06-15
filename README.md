@@ -24,3 +24,9 @@ In a typical web scraping task with Python, the workflow involves:
 
 
 :paperclip: **Storing the Data:** Saving the extracted data in a desired format, such as a CSV file, database, or JSON.
+
+
+# :key: Python code
+
+      df.to_excel('output.xlsx',index=False)   # storing the data in excel file
+
