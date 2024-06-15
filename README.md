@@ -3,7 +3,7 @@
 Web scraping is the process of extracting data from websites. It involves fetching the content of web pages and parsing it to gather the required information. Python, with its rich ecosystem of libraries, is a popular choice for web scraping due to its simplicity and effectiveness.
 
 
-# :key:Two key libraries used for this purpose are requests and BeautifulSoup. 
+# :key: Two key libraries used for this purpose are requests and BeautifulSoup. 
 
 :paperclip: **Requests:** This library allows you to send HTTP requests to fetch web pages. It is user-friendly and handles various aspects of making HTTP requests, such as managing sessions and handling cookies.
 
