@@ -89,7 +89,7 @@ In a typical web scraping task with Python, the workflow involves:
         row_data_1=[td.text.strip() for td in row_data]
 
 
-        # Add the row data to the DataFrame by checking the length of the dataframe
+      # Add the row data to the DataFrame by checking the length of the dataframe
         length=len(df)
         df.loc[length]=row_data_1
 
@@ -98,10 +98,15 @@ In a typical web scraping task with Python, the workflow involves:
        df
 
 
-      df.to_excel('output.xlsx',index=False)   # storing the data in excel file
+       # storing the data in excel file
+       df.to_excel('output.xlsx',index=False)
+
+
 
 
 :paperclip:  Web scraping is a powerful technique for data collection, enabling access to a vast amount of information available on the internet. With Python's requests and BeautifulSoup libraries, you can efficiently scrape and parse web data to suit various needs, from academic research to business intelligence.
+
+
 
 
 :paperclip:  While web scraping offers immense potential, it is crucial to use it responsibly and ethically. 
