@@ -1,4 +1,4 @@
-# :key: Web-Scrapping (Python)
+# :chart_with_upwards_trend: Web-Scrapping (Python) :chart_with_upwards_trend:
 
 Web scraping is the process of extracting data from websites. It involves fetching the content of web pages and parsing it to gather the required information. Python, with its rich ecosystem of libraries, is a popular choice for web scraping due to its simplicity and effectiveness.
 
